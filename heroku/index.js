@@ -109,7 +109,7 @@
    // Process the Facebook updates here
    received_updates.unshift(req.body);
    const body = req.body
-   console.log(req.body)
+   console.log(body.entry[0].changes[0])
    if(body.entry[0].changes[0].messages[0].type == 'text'){
      axios.post(`https://graph.facebook.com/v13.0/${process.env.PHONE_ID}/messages`, interactiveBody, {headers : headers})
    }
